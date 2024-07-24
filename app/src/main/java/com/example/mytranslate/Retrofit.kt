@@ -1,14 +1,21 @@
 package com.example.mytranslate
 
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.Body
+import retrofit2.http.Headers
+import retrofit2.http.POST
 
 interface TranslateApi {
-    @GET("translate")
+
+    @Headers("Content-Type: application/json")
+    @POST("translate/v2/translate")
     fun translate(
-        @Query("q") query: String,
-        @Query("target") targetLanguage: String,
-        @Query("key") apiKey: String
+        @Body request: TranslateRequest
     ): Call<TranslationResponse>
 }
+
+data class TranslateRequest(
+    val texts: List<String>,
+    val targetLanguageCode: String,
+    val folderId: String
+)
