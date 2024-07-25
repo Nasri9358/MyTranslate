@@ -11,20 +11,23 @@
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter text to translate" />
+        style="@style/CustomTextStyle"
+        android:hint="Введите техт для перевода" />
 
     <Button
         android:id="@+id/translateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Translate"
+        android:text="Перевести"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        style="@style/CustomTextStyle"/>
 
     <TextView
         android:id="@+id/translatedText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Translated text will appear here"
-        android:layout_marginTop="16dp" />
+        android:text="Переведенный текст появиться здесь"
+        android:layout_marginTop="16dp"
+        style="@style/CustomTextStyle"/>
 </LinearLayout>
